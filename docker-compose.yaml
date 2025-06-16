@@ -1,6 +1,6 @@
 services:
   postgres:
-    container_name: postgres-nest-tutorial
+    container_name: postgres-jwt-auth
     image: postgres:latest
     restart: always
     environment:
@@ -11,11 +11,11 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
-      - nestjs-course
+      - nestjs-jwt-auth
 
 
 volumes:
   postgres_data:
 
 networks:
-  nestjs-course:
+  nestjs-jwt-auth:
