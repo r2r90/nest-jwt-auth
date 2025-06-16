@@ -1,0 +1,21 @@
+services:
+  postgres:
+    container_name: postgres-nest-tutorial
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nestjs-course
+
+
+volumes:
+  postgres_data:
+
+networks:
+  nestjs-course:
